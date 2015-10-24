@@ -1,0 +1,32 @@
+textarea {
+  width: 600px;
+  height: 100px;
+}
+
+.section {
+  width: 720px;
+  margin: 10px 40px;
+}
+
+.projectDelay {
+  width: 30px;
+}
+
+.bar.positive {
+  fill: steelblue;
+}
+
+.bar.negative {
+  fill: brown;
+}
+
+.axis text {
+  font: 18px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #fff;
+  shape-rendering: crispEdge;
+}

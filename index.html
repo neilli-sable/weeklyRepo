@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/master.css" media="screen" title="no title" charset="utf-8">
+  <title>WeeklyReport</title>
+</head>
+<body>
+  <h1>WeeklyReport</h1>
+  <div class="section section-plan">
+    <h2>1. 先週の予定</h2>
+    <div id="form-plan">
+      <div class="row-plan">
+        <input type="text" id="projectName0-plan" placeholder="例: ○○プロジェクト">
+        <select id="projectStart0-plan" class="dateSelector"></select>
+        <select id="projectEnd0-plan" class="dateSelector"></select>
+        <input type="number" id="projectDelay0-plan" class="projectDelay" min="0" max="99" value="0">時間の遅れ
+      </div>
+    </div>
+    <button onclick="domManager.addNewInputLine('plan')">+</button>
+    <button onclick="reloadGraph('#graph-plan', graphPlan, 'plan');">更新</button>
+    <div id="graph-plan"></div>
+  </div>
+
+  <div class="section section-done">
+    <h2>2. 先週の実績</h2>
+    <div id="form-done">
+      <div class="row-done">
+        <input type="text" id="projectName0-done" placeholder="例: ○○プロジェクト">
+        <select id="projectStart0-done" class="dateSelector"></select>
+        <select id="projectEnd0-done" class="dateSelector"></select>
+        <input type="number" id="projectDelay0-done" class="projectDelay" min="0" max="99" value="0">時間の遅れ
+      </div>
+    </div>
+    <button onclick="domManager.addNewInputLine('done')">+</button>
+    <button onclick="reloadGraph('#graph-done', graphDone, 'done');">更新</button>
+    <div id="graph-done"></div>
+  </div>
+
+  <div class="section">
+    <h2>3. 課題 / 4. 改善</h2>
+    <textarea placeholder="例: ○○に遅れが出ているので、☓☓することを考慮します。"></textarea>
+  </div>
+
+  <div class="section section-next">
+    <h2>5. 今週の予定</h2>
+    <div id="form-next">
+      <div class="row-next">
+        <input type="text" id="projectName0-next" placeholder="例: ○○プロジェクト">
+        <select id="projectStart0-next" class="dateSelector"></select>
+        <select id="projectEnd0-next" class="dateSelector"></select>
+        <input type="number" id="projectDelay0-next" class="projectDelay" min="0" max="99" value="0">時間の遅れ
+      </div>
+    </div>
+    <button onclick="domManager.addNewInputLine('next')">+</button>
+    <button onclick="reloadGraph('#graph-next', graphNext, 'next');">更新</button>
+    <div id="graph-next"></div>
+  </div>
+
+  <div class="section">
+    <h2>6. 全体の遅れと対応について</h2>
+    <textarea placeholder="例: 全体として1日程度遅れていますが、作業効率を高めて対応できます。"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>7. 危惧している点、質問事項、お知らせなど</h2>
+    <textarea placeholder="例: 今週は水曜日は打ち合わせがあるので、作業が止まるのが気がかりです。"></textarea>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/axisUtils.js"></script>
+  <script src="js/domManager.js"></script>
+  <script src="js/graphManager.js"></script>
+  <script>
+  graphManager.initModule();
+  graphManager.paintGraph("#graph-plan", graphPlan);
+
+  domManager.setDateSelector();
+
+  var reloadGraph = function (graphId, graphObj, prefix) {
+    graphObj = graphManager.setDataObject(prefix);
+    graphManager.removeGraph(prefix);
+    graphManager.paintGraph(graphId, graphObj);
+  };
+
+  </script>
+
+</body>
+</html>
