@@ -1,3 +1,10 @@
+body {
+  padding: 0 30px;
+}
+
+input[type="text"] {
+  width: 450px;
+}
 textarea {
   width: 600px;
   height: 100px;
@@ -20,8 +27,11 @@ textarea {
   fill: brown;
 }
 
-.axis text {
-  font: 18px sans-serif;
+.x.axis text {
+  font-size: 18px;
+}
+.y.axis text {
+  font-size: 12px;
 }
 
 .axis path,

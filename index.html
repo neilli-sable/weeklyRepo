@@ -6,13 +6,16 @@
   <link rel="stylesheet" href="css/master.css" charset="utf-8">
   <title>WeeklyReport</title>
 </head>
+
 <body>
+
   <h1>WeeklyReport</h1>
+
   <div class="section section-plan">
     <h2>1. 先週の予定</h2>
     <div id="form-plan">
       <div class="row-plan">
-        <input type="text" id="projectName0-plan" placeholder="例: ○○プロジェクト">
+        <input type="text" id="projectName0-plan" placeholder="例: ○○プロジェクト" maxlength="20">
         <select id="projectStart0-plan" class="dateSelector"></select>
         <select id="projectEnd0-plan" class="dateSelector"></select>
         <input type="number" id="projectDelay0-plan" class="projectDelay" min="0" max="99" value="0">時間の遅れ
@@ -27,7 +30,7 @@
     <h2>2. 先週の実績</h2>
     <div id="form-done">
       <div class="row-done">
-        <input type="text" id="projectName0-done" placeholder="例: ○○プロジェクト">
+        <input type="text" id="projectName0-done" placeholder="例: ○○プロジェクト" maxlength="20">
         <select id="projectStart0-done" class="dateSelector"></select>
         <select id="projectEnd0-done" class="dateSelector"></select>
         <input type="number" id="projectDelay0-done" class="projectDelay" min="0" max="99" value="0">時間の遅れ
@@ -47,7 +50,7 @@
     <h2>5. 今週の予定</h2>
     <div id="form-next">
       <div class="row-next">
-        <input type="text" id="projectName0-next" placeholder="例: ○○プロジェクト">
+        <input type="text" id="projectName0-next" placeholder="例: ○○プロジェクト" maxlength="20">
         <select id="projectStart0-next" class="dateSelector"></select>
         <select id="projectEnd0-next" class="dateSelector"></select>
         <input type="number" id="projectDelay0-next" class="projectDelay" min="0" max="99" value="0">時間の遅れ
