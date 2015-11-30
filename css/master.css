@@ -1,18 +1,44 @@
 body {
+  font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
   padding: 0 30px;
+  background-color: #6500CC;
+}
+
+h1 {
+  color: #B27416;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #555;
+  font-size: 1.0rem;
+}
+
+main {
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
 }
 
 input[type="text"] {
   width: 450px;
 }
 textarea {
-  width: 600px;
+  width: 710px;
   height: 100px;
+}
+
+.index {
+  color: #B27416;
 }
 
 .section {
   width: 720px;
-  margin: 10px 40px;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 2px solid #6E5687;
+  border-radius: 10px;
 }
 
 .projectDelay {
@@ -21,10 +47,6 @@ textarea {
 
 .bar.positive {
   fill: steelblue;
-}
-
-.bar.negative {
-  fill: brown;
 }
 
 .x.axis text {
