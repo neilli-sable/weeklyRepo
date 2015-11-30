@@ -1,12 +1,14 @@
 /**
  * DOMの操作モジュール
 */
-var domManager = (function() {
+weekly.domManager = (function() {
+  'use strict';
+
   /**
    * 新しい入力行を追加する
   */
   var addNewInputLine = function(prefix) {
-    rowCount = document.getElementsByClassName('row-' + prefix).length;
+    var rowCount = document.getElementsByClassName('row-' + prefix).length;
 
     var form = document.getElementById('form-' + prefix);
     var ele = document.createElement('div');

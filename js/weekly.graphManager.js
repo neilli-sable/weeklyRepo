@@ -1,7 +1,7 @@
 /**
  * グラフ描画管理モジュール
 */
-var graphManager = (function() {
+weekly.graphManager = (function() {
   'use strict';
 
   /**
@@ -24,7 +24,7 @@ var graphManager = (function() {
               .scale(x)
               .orient("bottom")
               .ticks(6)
-              .tickFormat(getDate);
+              .tickFormat(weekly.axisUtils.getDate);
   };
 
   /**
@@ -34,7 +34,7 @@ var graphManager = (function() {
   */
   var paintGraph = function(graphId, graphObj) {
     if (graphObj.length === 0) return;
-    
+
     var height = 60 * graphObj.length - margin.top - margin.bottom + 40;
 
     var y = d3.scale.ordinal()

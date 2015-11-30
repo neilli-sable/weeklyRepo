@@ -21,8 +21,8 @@
           <input type="number" id="projectDelay0-plan" class="projectDelay" min="0" max="99" value="0">時間の遅れ
         </div>
       </div>
-      <button onclick="domManager.addNewInputLine('plan')">+</button>
-      <button onclick="reloadGraph('#graph-plan', graphPlan, 'plan');">更新</button>
+      <button onclick="weekly.domManager.addNewInputLine('plan')">+</button>
+      <button onclick="weekly.reloadGraph('#graph-plan', graphPlan, 'plan');">更新</button>
       <div id="graph-plan"></div>
     </div>
 
@@ -82,23 +82,13 @@
     </div>
   </main>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="js/weekly.js"></script>
   <script src="js/weekly.settings.js"></script>
   <script src="js/weekly.axisUtils.js"></script>
   <script src="js/weekly.domManager.js"></script>
   <script src="js/weekly.graphManager.js"></script>
   <script>
-  graphManager.initModule();
-  graphManager.paintGraph("#graph-plan", graphPlan);
-
-  domManager.setDateSelector();
-
-  var reloadGraph = function (graphId, graphObj, prefix) {
-    graphObj = graphManager.setDataObject(prefix);
-    graphManager.removeGraph(prefix);
-    graphManager.paintGraph(graphId, graphObj);
-  };
-
+  weekly.initModule();
   </script>
-
 </body>
 </html>
